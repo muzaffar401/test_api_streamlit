@@ -80,7 +80,7 @@ def update_book_status(book_id, issued):
 #     return []
 def fetch_books_api(query):
     # Get API key from Streamlit secrets
-    api_key = st.secrets["google_books_api_key"]
+    api_key = st.secrets["books_api"]
     url = f"https://www.googleapis.com/books/v1/volumes?q={query}&key={api_key}"
     
     try:
