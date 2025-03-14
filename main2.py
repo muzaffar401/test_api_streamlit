@@ -71,7 +71,7 @@ def update_book_status(book_id, issued):
     session.close()
 
 # def fetch_books_api(query):
-#     url = f"https://www.googleapis.com/books/v1/volumes?q={query}&country=US"
+#     url = f"https://www.googleapis.com/books/v1/volumes?q={query}"
 #     response = requests.get(url)
 #     if response.status_code == 200:
 #         data = response.json()
@@ -81,7 +81,7 @@ def update_book_status(book_id, issued):
 def fetch_books_api(query):
     # Get API key from Streamlit secrets
     api_key = st.secrets["books_api"]
-    url = f"https://www.googleapis.com/books/v1/volumes?q={query}&key={api_key}"
+    url = f"https://www.googleapis.com/books/v1/volumes?q={query}&key={api_key}&country=US"
     
     try:
         response = requests.get(url, timeout=10)  # 10-second timeout
